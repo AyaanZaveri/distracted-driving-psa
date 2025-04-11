@@ -10,8 +10,8 @@ interface BlurTextProps {
   direction?: "top" | "bottom";
   threshold?: number;
   rootMargin?: string;
-  animationFrom?: Record<string, any>;
-  animationTo?: Record<string, any>[];
+  animationFrom?: Record<string, unknown>;
+  animationTo?: Record<string, unknown>[];
   easing?: (t: number) => number | string;
   onAnimationComplete?: () => void;
   textAlign?: "left" | "center" | "right" | "justify"; // Added textAlign prop
@@ -37,6 +37,7 @@ const BlurText: React.FC<BlurTextProps> = ({
   const animatedCount = useRef(0);
 
   // Default animations based on direction
+
   const defaultFrom: Record<string, any> =
     direction === "top"
       ? {
@@ -50,7 +51,7 @@ const BlurText: React.FC<BlurTextProps> = ({
           transform: "translate3d(0,50px,0)",
         };
 
-  const defaultTo: Record<string, any>[] = [
+  const defaultTo: Record<string, unknown>[] = [
     {
       filter: "blur(5px)",
       opacity: 0.5,
@@ -86,9 +87,10 @@ const BlurText: React.FC<BlurTextProps> = ({
       from: animationFrom || defaultFrom,
       to: inView
         ? async (
-            next: (arg: Record<string, SpringValue<any>>) => Promise<void>
+            next: (arg: Record<string, SpringValue<unknown>>) => Promise<void>
           ) => {
             for (const step of animationTo || defaultTo) {
+              // @ts-expect-error I don't know why this is happening
               await next(step);
             }
             animatedCount.current += 1;
@@ -121,7 +123,7 @@ const BlurText: React.FC<BlurTextProps> = ({
       style={{ textAlign }} // Apply textAlign style
     >
       {springs.map((props, index) => (
-        // @ts-ignore
+        // @ts-expect-error I don't know why this is happening
         <animated.span
           key={index}
           style={props}

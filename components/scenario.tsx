@@ -44,7 +44,8 @@ const Scenario = () => {
     }, 3000); // Trigger after 2 seconds
 
     return () => clearTimeout(timer); // Cleanup the timer on unmount
-  }, []); // Empty dependency array ensures this runs once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -103,6 +104,7 @@ const Scenario = () => {
         clearInterval(brakeInterval);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isBraking]);
 
   const handleToastClick = () => {
@@ -137,7 +139,6 @@ const Scenario = () => {
         delay={100}
       />
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const renderedBlurText = React.useMemo(() => {
@@ -288,8 +289,6 @@ const Scenario = () => {
               time. But next time, you might not be so lucky.
             </span>
           </div>
-
-          
 
           <div className="flex flex-col gap-4">
             <Tabs defaultValue="position-time">
