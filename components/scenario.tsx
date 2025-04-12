@@ -124,7 +124,9 @@ const Scenario = () => {
   const showMessageToast = () => {
     toast(
       <div className="flex flex-row items-center gap-12">
-        <span>{"Alex: Where are you? I've been waiting for 10 minutes!"}</span>
+        <span>
+          {"Mr. Wyman: Where are you? I've been waiting for 9.8 minutes!"}
+        </span>
         <Button onClick={handleToastClick} size={"sm"} className="w-min">
           View
         </Button>
@@ -216,7 +218,7 @@ const Scenario = () => {
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogContent>
                   <DialogHeader>
-                    <DialogTitle>Message from Alex</DialogTitle>
+                    <DialogTitle>Message from Mr. Wyman</DialogTitle>
                   </DialogHeader>
                   <div className="text-bubble">
                     <span>
@@ -263,7 +265,7 @@ const Scenario = () => {
             <span>
               You were cruising down the road at a steady{" "}
               <span className="font-bold">21 m/s</span> {"(that's 75 km/h)"},
-              when a message from Alex popped up on your phone. You got
+              when a message from Mr. Wyman popped up on your phone. You got
               distracted and glanced down to reply — unaware that a{" "}
               <span className="font-bold">moose</span> had just stepped onto the
               road up ahead.
