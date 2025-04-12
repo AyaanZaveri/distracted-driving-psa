@@ -27,12 +27,12 @@ const chartData = [
     fill: "var(--chart-1)",
   },
   {
-    category: "Admit texting while driving",
+    category: "Sent text behind wheel",
     value: 45,
     fill: "var(--chart-2)",
   },
   {
-    category: "Use phone while driving",
+    category: "Admit to texting while driving",
     value: 47,
     fill: "var(--chart-3)",
   },
@@ -66,10 +66,7 @@ export default function DDStats() {
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
-          <BarChart
-            accessibilityLayer
-            data={chartData}
-          >
+          <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="category"
