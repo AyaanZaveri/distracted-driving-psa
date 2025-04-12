@@ -62,7 +62,7 @@ const chartConfig = {
 
 export default function DDStats() {
   return (
-    <Card>
+    <Card className="w-5/6">
       <CardHeader>
         <CardTitle>Distracted Driving in Canada 🇨🇦</CardTitle>
         <CardDescription>
@@ -74,7 +74,6 @@ export default function DDStats() {
           <BarChart
             accessibilityLayer
             data={chartData}
-            margin={{ top: 20, bottom: 40, left: 65, right: 65 }}
           >
             <CartesianGrid vertical={false} />
             <XAxis
@@ -82,8 +81,6 @@ export default function DDStats() {
               tickLine={false}
               tickMargin={10}
               axisLine={false}
-              angle={-15}
-              textAnchor="end"
             />
             <ChartTooltip
               cursor={false}

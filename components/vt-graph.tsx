@@ -131,7 +131,7 @@ const chartConfig = {
 
 export function VTGraph() {
   return (
-    <Card className="w-full">
+    <Card className="w-5/6">
       <CardHeader>
         <CardTitle className="text-xl">Velocity-Time Graph</CardTitle>
         <CardDescription>

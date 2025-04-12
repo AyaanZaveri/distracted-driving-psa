@@ -131,7 +131,7 @@ const chartConfig = {
 
 export function DTGraph() {
   return (
-    <Card className="w-full">
+    <Card className="w-5/6">
       <CardHeader>
         <CardTitle className="text-xl">Position-Time Graph</CardTitle>
         <CardDescription>

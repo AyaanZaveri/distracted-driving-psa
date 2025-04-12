@@ -274,10 +274,17 @@ const Scenario = () => {
               your phone. Thankfully, thanks to that strong morning coffee, your
               reaction time was a quick{" "}
               <span className="font-bold">0.2 seconds</span>. The moment you
-              looked up, you slammed on the brakes.
+              looked up, you slammed on the brakes and brought the car to rest.
             </span>
             <span>
-              At that point — <span className="font-bold">6.2 seconds</span>{" "}
+              You displaced <span className="font-bold">126 meters</span> in the
+              time you were texting an additional{" "}
+              <span className="font-bold">4.2 meters</span> while you were
+              reacting. That’s already{" "}
+              <span className="font-bold">130.2 meters</span> of distance.
+            </span>
+            <span>
+              After that point — <span className="font-bold">6.2 seconds</span>{" "}
               after the distraction began — you floored the brakes. The
               acceleration of your car was{" "}
               <span className="font-bold">–6.5 m/s²</span>, taking approximately{" "}
