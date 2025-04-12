@@ -17,6 +17,9 @@ import { VTGraph } from "./vt-graph";
 import { Geist, Poppins } from "next/font/google";
 import { Gauge } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import DDStats from "./dd-stats";
+import { Separator } from "./ui/separator";
+import Image from "next/image";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -81,7 +84,7 @@ const Scenario = () => {
 
             setMooseMessage("blackout");
             setTimeout(() => {
-              setMooseMessage("You nearly died!");
+              setMooseMessage("You nearly crashed!");
               setTimeout(() => {
                 setMooseMessage(
                   "5 more meters and you would have hit the moose!"
@@ -144,7 +147,7 @@ const Scenario = () => {
   const renderedBlurText = React.useMemo(() => {
     return (
       <BlurText
-        className="text-6xl font-bold text-red-600 text-center px-32"
+        className="text-6xl font-bold text-red-600 text-center px-32 mt-16"
         text="THERE IS A MOOSE COMING!! HIT THE BRAKES!"
         delay={100}
         textAlign="center"
@@ -168,9 +171,12 @@ const Scenario = () => {
       }
     >
       {showMooseWarning ? (
-        <div>
+        <div className="flex items-center flex-col">
+          <div>
+            <Image src="/moose.png" alt="Moose" width={150} height={150} />
+          </div>
           {renderedBlurText /* Render the memoized message here */}
-          <h2 className="text-3xl font-medium text-center mt-24 inline-flex items-center justify-center gap-4 w-full">
+          <h2 className="text-3xl font-medium text-center mt-24 inline-flex items-center justify-center gap-4 w-full mt-4">
             <Gauge size={36} /> {velocity} km/h
           </h2>
           <p className="mt-8 text-3xl font-semibold text-center text-red-600 animate-[pulse_0.5s_ease-in-out_infinite]">
@@ -253,6 +259,7 @@ const Scenario = () => {
             delay={100}
           />
           <div className="flex flex-col gap-4 w-5/6">
+            <h3 className={`text-2xl font-bold`}>Breakdown</h3>
             <span>
               You were cruising down the road at a steady{" "}
               <span className="font-bold">21 m/s</span> {"(that's 75 km/h)"},
@@ -271,7 +278,7 @@ const Scenario = () => {
             </span>
             <span>
               At that point — <span className="font-bold">6.2 seconds</span>{" "}
-              after the distraction began — you floored the breaks. The
+              after the distraction began — you floored the brakes. The
               acceleration of your car was{" "}
               <span className="font-bold">–6.5 m/s²</span>, taking approximately{" "}
               <span className="font-bold">3.23 seconds</span> to come to a
@@ -283,10 +290,48 @@ const Scenario = () => {
               — more than enough distance to seriously injure someone or destroy
               your vehicle if you reacted even a second later.
             </span>
+            <Separator />
+            <h3 className={`text-2xl font-bold`}>Statistics</h3>
+            <span>
+              And you wouldn’t be the only one. In Canada,{" "}
+              <span className="font-bold">47% of drivers</span> admit to using
+              their phone while driving, and{" "}
+              <span className="font-bold">45%</span> of them have sent text
+              messages behind the wheel — despite{" "}
+              <span className="font-bold">87%</span> acknowledging how dangerous
+              it is.
+            </span>
+            <span>
+              Texting while driving increases your risk of a collision by{" "}
+              <span className="font-bold">23 times</span>. It's no wonder that{" "}
+              <span className="font-bold">1 in 5 fatal crashes</span> in Canada
+              is caused by distracted driving — a number that's steadily rising.
+            </span>
+            <span>
+              Younger drivers are hit hardest. Those aged{" "}
+              <span className="font-bold">16–19</span> are{" "}
+              <span className="font-bold">4 times more likely</span> to die in
+              distracted driving crashes than drivers aged 25–34.
+            </span>
             <span>
               This scenario shows how just a few seconds of distraction can lead
               to a dangerous situation. Luckily, this time, you stopped just in
               time. But next time, you might not be so lucky.
+            </span>
+          </div>
+
+          <DDStats />
+
+          <div className="flex flex-col gap-4 mt-4">
+            <BlurText
+              className="text-3xl font-semibold"
+              text="Now let's take a look at the graphs"
+              delay={100}
+            />
+            <span>
+              The graphs below show the position and velocity of the car over
+              time. The orange line indicates the point where you noticed the
+              moose. The red line indicates the point where you started braking.
             </span>
           </div>
 

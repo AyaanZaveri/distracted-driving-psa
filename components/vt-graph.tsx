@@ -136,8 +136,8 @@ export function VTGraph() {
         <CardTitle className="text-xl">Velocity-Time Graph</CardTitle>
         <CardDescription>
           This graph shows the velocity of the vehicle over time. The red dashed
-          line indicates the point at which the driver begins to brake (6.3s).
-          The final displacement is approximately 164.1m.
+          line indicates the point at which you begin to brake (6.3s). The final
+          displacement is approximately 164.1m.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -196,7 +196,7 @@ export function VTGraph() {
             <span>Braking point</span>
           </div>
           <div className="flex items-center gap-2 font-medium leading-none mt-4">
-            Final velocity: 0 m/s
+            Final velocity: 0 m/s (at rest)
           </div>
         </div>
       </CardFooter>
