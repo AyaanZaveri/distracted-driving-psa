@@ -29,27 +29,22 @@ const chartData = [
   {
     category: "Admit texting while driving",
     value: 45,
-    fill: "var(--chart-1)",
+    fill: "var(--chart-2)",
   },
   {
     category: "Use phone while driving",
     value: 47,
-    fill: "var(--chart-1)",
+    fill: "var(--chart-3)",
   },
   {
     category: "Use phone at red light",
     value: 33,
-    fill: "var(--chart-1)",
+    fill: "var(--chart-4)",
   },
   {
     category: "Accidents from distraction",
     value: 21,
-    fill: "var(--chart-1)",
-  },
-  {
-    category: "Risk multiplier",
-    value: 23,
-    fill: "var(--chart-4)",
+    fill: "var(--chart-5)",
   },
 ];
 
